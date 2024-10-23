@@ -1,0 +1,380 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary-color: #f8fafc;
+    --text-color: #1e293b;
+    --border-color: #e2e8f0;
+    --error-color: #ef4444;
+    --success-color: #22c55e;
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --border-radius: 0.375rem;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: #f1f5f9;
+}
+
+/* Layout */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Form sections */
+section {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--border-color);
+}
+
+h3 {
+    color: var(--text-color);
+    margin: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+/* Form elements */
+.personal-info,
+.address-fields,
+.education-section {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.name-group,
+.parent-info,
+.contact-info,
+.education-details,
+.education-dates,
+.school-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+/* Form controls */
+label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+input,
+select {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: white;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+input:required {
+    border-left: 3px solid var(--primary-color);
+}
+
+input[type="radio"] {
+    width: auto;
+    margin-right: var(--spacing-xs);
+}
+
+/* Gender fieldset */
+fieldset {
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin: var(--spacing-md) 0;
+}
+
+legend {
+    padding: 0 var(--spacing-sm);
+    font-weight: 500;
+}
+
+.gender-group {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.gender-group label {
+    display: inline;
+    margin-left: var(--spacing-xs);
+}
+
+/* Address Sections Container */
+.address-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+}
+
+/* Individual Address Section */
+.address-section {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.address-section:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.address-section h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Address Fields Layout */
+.address-fields {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.address-fields > div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+/* Select Element Specific Styling */
+.address-fields select {
+    background-color: white;
+    cursor: pointer;
+}
+
+.address-fields select:hover {
+    border-color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .address-container {
+        grid-template-columns: 1fr;
+    }
+
+    .address-section {
+        padding: var(--spacing-md);
+    }
+}
+
+/* Print styles */
+@media print {
+    .address-section {
+        break-inside: avoid;
+        background-color: white;
+        box-shadow: none;
+    }
+
+    .address-section:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+/* References Section Styles */
+.references-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+}
+
+.reference-card {
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.reference-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.reference-card h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.reference-fields {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .references-container {
+        grid-template-columns: 1fr;
+    }
+
+    .reference-card {
+        padding: var(--spacing-md);
+    }
+}
+
+
+
+/* Form actions */
+.form-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin: var(--spacing-xl) 0;
+}
+
+button {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+button[type="reset"] {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+button[type="reset"]:hover {
+    background-color: var(--border-color);
+}
+
+/* Validation styles */
+input:invalid:not(:placeholder-shown) {
+    border-color: var(--error-color);
+}
+
+input:valid:not(:placeholder-shown) {
+    border-color: var(--success-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    section {
+        padding: var(--spacing-md);
+    }
+
+    .name-group,
+    .parent-info,
+    .contact-info,
+    .education-details,
+    .education-dates,
+    .school-info {
+        grid-template-columns: 1fr;
+    }
+
+    .gender-group {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+    }
+
+    section {
+        box-shadow: none;
+        border: 1px solid var(--border-color);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .form-actions {
+        display: none;
+    }
+
+    .reference-card {
+        break-inside: avoid;
+        background-color: white;
+        box-shadow: none;
+    }
+
+    .reference-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Generator</title>
+    <link rel="stylesheet" href="/cvd.css">
+</head>
+
+<body>
+    <header>
+        <h1>My First CV Generator</h1>
+        <p>Create professional CV easily</p>
+    </header>
+
+    <main>
+        <form id="cvForm" action="/submit" method="POST">
+            <!-- Personal Details Section -->
+            <section>
+                <h2>Personal Details</h2>
+
+                <div class="personal-info">
+                    <div class="name-group">
+                        <div>
+                            <label for="firstName">First Name:</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                        </div>
+                        <div>
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                        </div>
+                    </div>
+
+                    <div class="parent-info">
+                        <div>
+                            <label for="fatherName">Father's Name:</label>
+                            <input type="text" id="fatherName" name="fatherName" placeholder="Father's name">
+                        </div>
+                        <div>
+                            <label for="motherName">Mother's Name:</label>
+                            <input type="text" id="motherName" name="motherName" placeholder="Mother's name">
+                        </div>
+                    </div>
+
+                    <fieldset>
+                        <legend>Gender</legend>
+                        <div class="gender-group">
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">Male</label>
+
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+
+                            <input type="radio" id="other" name="gender" value="other">
+                            <label for="other">Other</label>
+                        </div>
+                    </fieldset>
+                    
+
+                    <div class="contact-info">
+                        <div>
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div>
+                            <label for="dob">Date of Birth:</label>
+                            <input type="date" id="dob" name="dob" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="address-container">
+                    <!-- Present Address -->
+                    <div class="address-section">
+                        <h3>Present Address</h3>
+                        <div class="address-fields">
+                            <div>
+                                <label for="presentCountry">Country:</label>
+                                <select id="presentCountry" name="presentCountry" required>
+                                    <option value="null">Select a country</option>
+                                    <option value="BD">Bangladesh</option>
+                                    <option value="IN">India</option>
+                                    <option value="PK">Pakistan</option>
+                                    <option value="CN">China</option>
+                                    <option value="NP">Nepal</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <option value="US">United States</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="presentState">State/Division:</label>
+                                <input type="text" id="presentState" name="presentState" required>
+                            </div>
+                            <div>
+                                <label for="presentCity">City:</label>
+                                <input type="text" id="presentCity" name="presentCity" required>
+                            </div>
+                            <div>
+                                <label for="presentAddress">House & Road No.:</label>
+                                <input type="text" id="presentAddress" name="presentAddress" required>
+                            </div>
+                            <div>
+                                <label for="presentPostOffice">Post Office:</label>
+                                <input type="text" id="presentPostOffice" name="presentPostOffice">
+                            </div>
+                            <div>
+                                <label for="presentZip">ZIP Code:</label>
+                                <input type="number" id="presentZip" name="presentZip">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Permanent Address -->
+                    <div class="address-section">
+                        <h3>Permanent Address</h3>
+                        <div class="address-fields">
+                            <div>
+                                <label for="permanentCountry">Country:</label>
+                                <select id="permanentCountry" name="permanentCountry" required>
+                                    <option value="null">Select a country</option>
+                                    <option value="BD">Bangladesh</option>
+                                    <option value="IN">India</option>
+                                    <option value="PK">Pakistan</option>
+                                    <option value="CN">China</option>
+                                    <option value="NP">Nepal</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <option value="US">United States</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="permanentState">State/Division:</label>
+                                <input type="text" id="permanentState" name="permanentState" required>
+                            </div>
+                            <div>
+                                <label for="permanentCity">City:</label>
+                                <input type="text" id="permanentCity" name="permanentCity" required>
+                            </div>
+                            <div>
+                                <label for="permanentAddress">House & Road No.:</label>
+                                <input type="text" id="permanentAddress" name="permanentAddress" required>
+                            </div>
+                            <div>
+                                <label for="permanentPostOffice">Post Office:</label>
+                                <input type="text" id="permanentPostOffice" name="permanentPostOffice">
+                            </div>
+                            <div>
+                                <label for="permanentZip">ZIP Code:</label>
+                                <input type="number" id="permanentZip" name="permanentZip">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="img">
+                    <label for="upload">Upload picture</label>
+                    <input type="file" required>
+                </div>
+            </section>
+
+            <!-- Educational Details Section -->
+            <section>
+                <h2>Educational Details</h2>
+
+                <!-- University Education -->
+                <div class="education-section">
+                    <h3>University/College Education</h3>
+                    <div>
+                        <label for="university">University/College Name:</label>
+                        <input type="text" id="university" name="university" required>
+                    </div>
+                    <div class="education-details">
+                        <div>
+                            <label for="faculty">Faculty:</label>
+                            <input type="text" id="faculty" name="faculty" required>
+                        </div>
+                        <div>
+                            <label for="department">Department:</label>
+                            <input type="text" id="department" name="department" required>
+                        </div>
+                    </div>
+                    <div class="education-dates">
+                        <div>
+                            <label for="uniStartDate">Start Date:</label>
+                            <input type="date" id="uniStartDate" name="uniStartDate" required>
+                        </div>
+                        <div>
+                            <label for="uniEndDate">End Date:</label>
+                            <input type="date" id="uniEndDate" name="uniEndDate">
+                        </div>
+                        <div>
+                            <label for="cgpa">CGPA:</label>
+                            <input type="number" id="cgpa" name="cgpa" step="0.01" min="0" max="4.0">
+                        </div>
+                        <div>
+                            <label for="totalCredits">Total Credits:</label>
+                            <input type="number" id="totalCredits" name="totalCredits" min="0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- School Education -->
+                <div class="education-section">
+                    <h3>School Education</h3>
+                    <!-- High School -->
+                    <div class="school-details">
+                        <div>
+                            <label for="highSchool">Higher Secondary School Name:</label>
+                            <input type="text" id="highSchool" name="highSchool" required>
+                        </div>
+                        <div class="school-info">
+                            <div>
+                                <label for="hsPassingYear">Passing Year:</label>
+                                <input type="month" id="hsPassingYear" name="hsPassingYear" required>
+                            </div>
+                            <div>
+                                <label for="hsLevel">Level:</label>
+                                <input type="text" id="hsLevel" name="hsLevel" placeholder="ex.: HSC" required>
+                            </div>
+                            <div>
+                                <label for="hsGPA">GPA:</label>
+                                <input type="number" id="hsGPA" name="hsGPA" step="0.01" min="0" max="5.0" placeholder="Out of 5">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secondary School -->
+                    <div class="school-details">
+                        <div>
+                            <label for="secondarySchool">Secondary School Name:</label>
+                            <input type="text" id="secondarySchool" name="secondarySchool" required>
+                        </div>
+                        <div class="school-info">
+                            <div>
+                                <label for="ssPassingYear">Passing Year:</label>
+                                <input type="month" id="ssPassingYear" name="ssPassingYear" required>
+                            </div>
+                            <div>
+                                <label for="ssLevel">Level:</label>
+                                <input type="text" id="ssLevel" name="ssLevel" placeholder="Ex.: SSC"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="ssGPA">GPA:</label>
+                                <input type="number" id="ssGPA" name="ssGPA" step="0.01" min="0" max="5.0" placeholder="Out of 5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>References</h2>
+                <div class="references-container">
+                    <!-- Reference 1 -->
+                    <div class="reference-card">
+                        <h3>Reference 1</h3>
+                        <div class="reference-fields">
+                            <div class="input-group">
+                                <label for="ref1Name">Name:</label>
+                                <input type="text" id="ref1Name" name="ref1Name" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="ref1Designation">Designation:</label>
+                                <input type="text" id="ref1Designation" name="ref1Designation" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="ref1Company">Company/Institution:</label>
+                                <input type="text" id="ref1Company" name="ref1Company" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="ref1Phone">Phone:</label>
+                                <input type="tel" id="ref1Phone" name="ref1Phone" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="ref1Email">Email:</label>
+                                <input type="email" id="ref1Email" name="ref1Email" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reference 2 -->
+                    <div class="reference-card">
+                        <h3>Reference 2</h3>
+                        <div class="reference-fields">
+                            <div class="input-group">
+                                <label for="ref2Name">Name:</label>
+                                <input type="text" id="ref2Name" name="ref2Name" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="ref2Designation">Designation:</label>
+                                <input type="text" id="ref2Designation" name="ref2Designation" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="ref2Company">Company/Institution:</label>
+                                <input type="text" id="ref2Company" name="ref2Company" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="ref2Phone">Phone:</label>
+                                <input type="tel" id="ref2Phone" name="ref2Phone"  required>
+                            </div>
+                            <div class="input-group">
+                                <label for="ref2Email">Email:</label>
+                                <input type="email" id="ref2Email" name="ref2Email" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="form-actions">
+                <button type="submit">Generate CV</button>
+                <button type="reset">Reset Form</button>
+            </div>
+        </form>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        document.getElementById('cvForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent actual form submission
+            
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+    
+            // Fetch form values
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const fatherName = document.getElementById('fatherName').value;
+            const fatherOccupation = document.getElementById('fatherOccupation').value;
+            const motherName = document.getElementById('motherName').value;
+            const motherOccupation = document.getElementById('motherOccupation').value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const dob = document.getElementById('dob').value;
+            
+            // Add text to PDF
+            doc.setFontSize(16);
+            doc.text("Curriculum Vitae", 10, 10);
+            doc.setFontSize(12);
+            doc.text(`Name: ${firstName} ${lastName}`, 10, 20);
+            doc.text(`Father's Name: ${fatherName}, Occupation: ${fatherOccupation}`, 10, 30);
+            doc.text(`Mother's Name: ${motherName}, Occupation: ${motherOccupation}`, 10, 40);
+            doc.text(`Gender: ${gender}`, 10, 50);
+            doc.text(`Phone: ${phone}`, 10, 60);
+            doc.text(`Email: ${email}`, 10, 70);
+            doc.text(`Date of Birth: ${dob}`, 10, 80);
+            
+            // Similarly, you can fetch other details and add to the PDF here
+            // Present Address, Educational Details, References, etc.
+    
+            // Save the PDF
+            doc.save(`${firstName}_${lastName}_CV.pdf`);
+        });
+    </script>    
+</body>
+
+</html>
