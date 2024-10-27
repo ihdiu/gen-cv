@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #1a237e;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+        }
+
+        .profile-section {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #3949ab;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            background-color: #3949ab;
+        }
+
+        .nav-links {
+            margin-top: 20px;
+        }
+
+        .nav-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 15px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #3949ab;
+        }
+
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            
+        }
+
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background-color: #1a237e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #3949ab;
+        }
+
+        .quiz-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            color: #1a237e;
+        }
+
+        .leaderboard-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .rank {
+            width: 30px;
+            height: 30px;
+            background-color: #1a237e;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .highlight {
+            background-color: #e8eaf6;
+        }
+
+        .badge {
+            background-color: #4caf50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile-section">
+                <img src="assets/nahid.jpg" alt="Student Profile" class="profile-img">
+                <h3>Alex Johnson</h3>
+                <p>Class: 10A</p>
+                <span class="badge">Rank: #5</span>
+            </div>
+            <div class="nav-links">
+                <a href="#dashboard">Dashboard</a>
+                <a href="#quizzes">Available Quizzes</a>
+                <a href="#questions">Search Questions</a>
+                <a href="#teachers">Find Teachers</a>
+                <a href="#marks">My Marks</a>
+                <a href="#leaderboard">Leaderboard</a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <h1>Student Dashboard</h1>
+                <p>Welcome back, Alex!</p>
+            </div>
+
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3>Available Quizzes</h3>
+                    <div class="quiz-card">
+                        <h4>Mathematics Quiz - Chapter 5</h4>
+                        <p>Duration: 30 minutes</p>
+                        <p>Questions: 20</p>
+                        <button class="btn">Start Quiz</button>
+                    </div>
+                    <div class="quiz-card">
+                        <h4>Science Quiz - Forces</h4>
+                        <p>Duration: 45 minutes</p>
+                        <p>Questions: 25</p>
+                        <button class="btn">Start Quiz</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Search Questions</h3>
+                    <input type="text" placeholder="Search by topic or keyword..." class="search-box">
+                    <div class="quiz-card">
+                        <h4>Topic: Algebra</h4>
+                        <p>Difficulty: Medium</p>
+                        <p>Total Questions: 50</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>My Recent Marks</h3>
+                    <table>
+                        <tr>
+                            <th>Quiz</th>
+                            <th>Score</th>
+                            <th>Date</th>
+                        </tr>
+                        <tr>
+                            <td>Mathematics Ch.4</td>
+                            <td>90%</td>
+                            <td>Oct 25</td>
+                        </tr>
+                        <tr>
+                            <td>Science Quiz</td>
+                            <td>85%</td>
+                            <td>Oct 23</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Teachers Directory</h3>
+                <input type="text" placeholder="Search teachers..." class="search-box">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Subject</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Dr. Smith</td>
+                        <td>Mathematics</td>
+                        <td><button class="btn">View Profile</button></td>
+                    </tr>
+                    <tr>
+                        <td>Mrs. Johnson</td>
+                        <td>Science</td>
+                        <td><button class="btn">View Profile</button></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Leaderboard</h3>
+                <div class="leaderboard-item">
+                    <span class="rank">1</span>
+                    <div>
+                        <h4>Sarah Parker</h4>
+                        <p>Average Score: 95%</p>
+                    </div>
+                </div>
+                <div class="leaderboard-item">
+                    <span class="rank">2</span>
+                    <div>
+                        <h4>Mike Wilson</h4>
+                        <p>Average Score: 93%</p>
+                    </div>
+                </div>
+                <div class="leaderboard-item highlight">
+                    <span class="rank">5</span>
+                    <div>
+                        <h4>Alex Johnson (You)</h4>
+                        <p>Average Score: 88%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
